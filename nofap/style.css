@@ -30,6 +30,9 @@ body {
     animation-name:sidebarAni;
     animation-duration: .7s;
 }
+.border{
+    border: 5px soild #00203f
+}
 @keyframes sidebarAni {
     from{
         left:-50%
@@ -40,7 +43,7 @@ body {
 }
 @media screen and (min-width:670px){
     #sidebar{
-        width: 30%;
+        width: 25%;
     }
 }
 #closeSideBar{
@@ -64,6 +67,7 @@ h3{
     flex-direction: column;
     flex-wrap: nowrap;
     margin: 1.5rem 1rem;
+    text-align: center;
 }
 .item{
     text-align: center;
@@ -184,6 +188,11 @@ input{
   }
   #achieve{
     padding: .5rem;
+    text-align: center;
+    font-size: 1.3rem;
+  }
+  #quote{
+    width: 80%;
     text-align: center;
     font-size: 1.3rem;
   }
