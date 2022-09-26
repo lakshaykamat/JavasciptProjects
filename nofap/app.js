@@ -7,6 +7,8 @@ const sideBar =  document.getElementById('sidebar')
 const achievementName = document.getElementById('achieveName')
 const quotesEl = document.getElementById('quote')
 
+
+//Quotes API
 const options = {
 	method: 'GET',
 	headers: {
@@ -14,22 +16,19 @@ const options = {
 		'X-RapidAPI-Host': 'quotes15.p.rapidapi.com'
 	}
 };
-
-fetch('https://quotes15.p.rapidapi.com/quotes/random/?language_code=en', options)
+fetch('https://quotes15.p.rapidapi.com/quotes/random/', options)
 	.then(response => response.json())
-	.then(response => {
-        setQuotes(response.content)
-    })
+	.then(response => setQuotes(response.content))
 	.catch(err => console.error(err));
 
-
-
-const sidebar = ()=>{
+//Sidebar
+function sidebar () {
     sideBar.style.display = "flex"
 }
 const closeSideBar = ()=>{
     sideBar.style.display = "none"
 }
+//seting text
 function start(){
     let getItem = localStorage.getItem("Inputvalue")//geting the stored item
     let inputMilli = new Date(getItem).getTime()//converting to millisecond(user time)
@@ -52,6 +51,7 @@ function start(){
     secEl.textContent = textSecond
     achievement(textDay)
 }
+//setting achiviement
 const achievement = (day)=>{
     if(day >=0 && day < 3){
         achieveEl.textContent = "New Bee"
@@ -112,7 +112,6 @@ function setStyle(i){
     for(var j = 1;j<=i;j++){
         achievementName.children[j].style.outline = "1px solid #00203f"
     }
-
 }
 setInterval(start,1000)
 function popup(){
